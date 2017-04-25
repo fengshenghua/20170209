@@ -1,0 +1,224 @@
+/*
+ * Copyright © 2016 I.B.M. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the “License”);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an “AS IS” BASIS,Li
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#dark-overlay {
+    background: black;
+    opacity: 0.62;
+    z-index: 40;
+}
+
+#clear-overlay {
+    background: transparent;
+    z-index: 60;
+}
+
+.between-overlays {
+    z-index: 50 !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.fade {
+    transition: opacity 3s;
+    -moz-transition: opacity 3s; /* Firefox */
+    -webkit-transition: opacity 3s; /* Safari and Chrome */
+    -o-transition: opacity 3s; /* Opera */
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.close {
+    padding: 0.625rem;
+    cursor: pointer;
+    width: 1.875rem;
+    outline: none
+}
+
+.close:hover {
+    animation: hover 0.2s 1 ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hover{
+    100% {
+        transform: scale(1.1);
+    }
+}
+.responsive-columns-wrapper {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -ms-display: flex;
+    -ms-flex-direction: row;
+}
+
+.responsive-column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+
+.pre-bar::before {
+    border-left: solid 0.25rem #9E4CE6;
+    border-radius: 0.25rem;
+    content: "";
+    margin-right: 0.4375rem;
+    margin-left: -0.625rem;
+}
+
+#svg_wrapper {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    min-width: 325px;
+    max-width: 1100px;
+}
+
+#svg_size {
+    font-size: 0;
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0;
+    padding-bottom: calc( 80% * 704 / 1024 );
+}
+
+#svg_canvas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+#api-results-scroll-wrapper{
+    padding-top: 0.3125rem;
+    margin-left: 1.25rem;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+    background: rgba(0,0,0,0.3);
+}
+
+#api-results {
+    text-align: left;
+    width: calc(100% + 20px);
+    max-height:  15rem;
+    overflow: hidden;
+}
+
+#api-results:hover {
+    overflow-y: auto;
+}
+
+.nav_active {
+    animation: nav 0.8s infinite linear;
+}
+
+@keyframes nav {
+    100% {
+        fill: green;
+    }
+}
+
+.flash_icon {
+    animation: ficon 0.5s infinite linear;
+}
+
+@keyframes ficon {
+    0% {
+        fill: white;
+    }
+    100% {
+        fill: black;
+    }
+}
+
+button,
+.base--button {
+  padding: 0.25em 2em;
+  color: #9855d4;
+  font-weight: 500;
+  background-color: white;
+  border: 2px solid #9855d4;
+  border-radius: 10rem;
+  transition: 0.2s;
+  display: inline-block; }
+button:hover,
+.base--button:hover, button:focus,
+.base--button:focus {
+background-color: white;
+border-color: #bd92e3;
+color: #bd92e3; }
+button:active,
+.base--button:active {
+transition: 0s;
+transform: translateY(2px); }
+
+/*fengsh====================>修正(3/6)=============>start*/
+/*#model, #location {*/
+#model{
+    font-size: 1em;
+    font-weight: 300;
+    background-color: rgba(0,0,0,0.1);
+    line-height: normal;
+    display: block; 
+}
+
+#model {
+    position: absolute;
+    z-index: 10;
+    left: 44.5rem;
+    top: 0.85rem;
+    width: 30%;
+}
+/*fengsh====================>修正(3/6)=============>end*/
+
+.base-select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("../images/jiantou.svg");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  background-position: calc(100% - .3em) 0.5em; }
+
