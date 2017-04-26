@@ -33,11 +33,11 @@
 </head>
 
 <body>
-<!--     <div id="dark-overlay" class="overlay"></div>
-    <div id="clear-overlay" class="overlay"></div> -->
+    <div id="dark-overlay" class="overlay"></div>
+    <div id="clear-overlay" class="overlay"></div>
     <!--The main car dashboard SVG-->
     <div id="svg_wrapper">
-        <div id="output-audio" class="audio-on" onclick="TTSModule.toggle()" value="ON" style="display:none;"></div>
+        <div id="output-audio" class="audio-on" onclick="TTSModule.toggle()" value="ON"></div>
         <!-- <button id="help" class="tooltip-dialog-btn" onclick="Sidebar.toggle()">What can I ask?</button> -->
         <div id="svg_size">
             <svg id="svg_canvas" viewBox="0 0 1024 704" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -54,10 +54,14 @@
                 </label>
             </div>
         </div>
-        <!-- <div id="tooltip-dialog-list"></div> -->
-<!--         <div id="sidebar">
+        <div id="tooltip-dialog-list"></div>
+        <div id="sidebar">
+            <div class="close-div" onclick="Sidebar.toggle()">
+                <img src="images/close-button.png" class="close" alt="close" />
+            </div>
+            <p class="pre-bar">I’m trained on these topics:</p>
             <ul id="suggestion-list"></ul>
-        </div> -->
+        </div>
     </div>
     <script>
         // For cloaking. Done in JS for the case of disabled JS (i.e. even though not much will work, something will be displayed.)
@@ -65,14 +69,14 @@
     </script>
     <!-- build:js vendor.min.js -->
     <script src="js/libs/snap.svg.js"></script>
-    <!--<script src="./../node_modules/whatwg-fetch/fetch.js"></script>-->
-    <script src="js/fetch.js"></script>
+    <script src="./../node_modules/whatwg-fetch/fetch.js"></script>
+    <!--<script src="js/fetch.js"></script>-->
     <!-- endbuild -->
     <!-- build:js dashboard.min.js -->
     <script src="js/common.js"></script>
     <script src="js/api.js"></script>
     <script src="js/sidebar.js"></script>
-    <!--<script src="js/tooltip-dialogs.js"></script>-->
+    <script src="js/tooltip-dialogs.js"></script>
     <script src="js/animations.js"></script>
     <!--<script src="js/panel.js"></script>-->
     <script src="js/conversation.js"></script>

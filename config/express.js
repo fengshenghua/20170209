@@ -33,7 +33,8 @@ module.exports = function (app) {
 
   app.use(compression());
   app.use(bodyParser.json({ limit: '1mb' }));
-  app.use(express.static(path.join(__dirname, '..', 'ui')));
-  app.use(express.static(path.join(__dirname, '..', 'node_modules/watson-react-components/dist/')));
-  app.use('/js', express.static(path.join(__dirname, '..', 'node_modules/whatwg-fetch/')));
+  app.use(express.static(path.join(__dirname, '..', 'dist')));
+  // app.use(express.static(path.join(__dirname, '..', 'ui')));
+  // app.use(express.static(path.join(__dirname, '..', 'node_modules/watson-react-components/dist/')));
+  // app.use('/js', express.static(path.join(__dirname, '..', 'node_modules/whatwg-fetch/')));
 };

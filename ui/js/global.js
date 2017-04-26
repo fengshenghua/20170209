@@ -19,10 +19,10 @@
 /* global TooltipDialogs: true, Conversation: true, ConversationResponse: true, Sidebar: true, Animations: true, Common: true */
 
 (function() {
-  //TooltipDialogs.init();
+  TooltipDialogs.init();
   Conversation.init();
   ConversationResponse.init();
-  // Sidebar.init();
+  Sidebar.init();
   Animations.init();
   // Used as a cloak to delay displaying the app until it's likely done rendering
   Common.wait(Animations.isInitialized, function() {

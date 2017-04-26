@@ -48,10 +48,10 @@ var TooltipDialogs = (function() {
     dialogId: 'type-here-tooltip-dialog',
     text: 'You can ask questions here.',
     showId: 'input-wrapper'
-  }, {
-    dialogId: 'menu-here-tooltip-dialog',
-    text: 'And if you don’t know what to ask, click here to see what I am trained to understand.',
-    showId: 'help'
+  // }, {
+  //   dialogId: 'menu-here-tooltip-dialog',
+  //   text: 'And if you don’t know what to ask, click here to see what I am trained to understand.',
+  //   showId: 'help'
   }];
 
   // Object to keep track of which dialog box should be displayed

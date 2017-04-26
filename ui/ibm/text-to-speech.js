@@ -64,9 +64,7 @@ var TTSModule = (function() {
 
   // Stops the audio for an older message and plays audio for current message
   function playCurrentAudio(payload) {
-    fetch('/api/text-to-speech/token', {
-        credentials: "same-origin"
-      }) // Retrieve TTS token
+    fetch('/api/text-to-speech/token') // Retrieve TTS token
       .then(function(response) {
         return response.text();
       }).then(function(token) {
@@ -78,14 +76,13 @@ var TTSModule = (function() {
               audio.pause();
             }
             audio = WatsonSpeech.TextToSpeech.synthesize({
-              text: audioText, // Output text/response
+              text: payload.text, // Output text/response
               voice: 'ja-JP_EmiVoice', // Default Watson voice
               autoPlay: true, // Automatically plays audio
               token: token
             });
             // When the audio stops playing
             audio.onended = function() {
-              Common.displayRawMessage({type: 'TTS', close: true, message: payload.text})
               allowSTT(payload); // Check if user wants to use STT
             };
           } else {

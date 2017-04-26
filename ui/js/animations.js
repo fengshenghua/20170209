@@ -122,7 +122,7 @@ var Animations = (function() {
     // var dash = snapSvgCanvas.group();
     Snap.load(svgUrls.dashboard, function(svgFragment) {
       svgFragment.select('title').remove();   // Remove the tooltip from the SVG
-      // // Append the loaded fragment from file to the SVG group
+      // Append the loaded fragment from file to the SVG group
       // dash.append(svgFragment);
 
       // animateNeedles();
@@ -142,17 +142,18 @@ var Animations = (function() {
       // Panel.init();
 
       initialized = true;
+      Api.setWatsonPayload({output: {text: ['Watsonございます。何か御用でしょうか。']}});
     });
   }
 
   // Load the background and set the rain to start in 1 minute, lasting for 30 seconds
   function loadBackground() {
     // Create SVG group to hold the SVG loaded from file
-    // var background = snapSvgCanvas.group();
+    var background = snapSvgCanvas.group();
     Snap.load(svgUrls.background, function(svgFragment) {
       svgFragment.select('title').remove();   // Remove the tooltip from the SVG
       // Append the loaded fragment from file to the SVG group
-      // background.append(svgFragment);
+      background.append(svgFragment);
 
       // // Begin animating the elements
       // animateRoad();
@@ -173,7 +174,7 @@ var Animations = (function() {
       //   }, 30000);
       // })();
 
-      // // Begin loading the dashboard SVGs
+      // Begin loading the dashboard SVGs
       loadDashboard();
     });
   }
@@ -181,7 +182,7 @@ var Animations = (function() {
   // Loads the sky
   function loadSky() {
     // Create SVG group to hold the SVG loaded from file
-    var sky = snapSvgCanvas.group();
+    // var sky = snapSvgCanvas.group();
     Snap.load(svgUrls.sky, function(svgFragment) {
       svgFragment.select('title').remove();   // Remove the tooltip from the SVG
 

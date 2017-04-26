@@ -16,10 +16,10 @@
   /*fengsh====================>修正(3/7)=============>start*/
 #input-wrapper {
     padding: 4.6rem;
-    margin-top: 0.7rem;
+    margin-top: -8.7rem;
 	width: 31.1rem;
     background: white;
-	margin-left: 13.2rem;
+	margin-left: 13.35rem;
     /* position: relative; */
 }
 
@@ -70,15 +70,15 @@
 #output-audio {
     position: absolute;
     z-index: 10;
-    left: 21.0rem;
-    top: 5.2rem;
+    left: 4.0rem;
+    top: 1.2rem;
     height: 3.5rem;
     width: 3.5rem;
     border-radius: 1.7rem;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: 70%;
+    background-size: 90%;
 }
 
 .input-outline {
@@ -241,7 +241,7 @@ input#user-input:-moz-placeholder {
 .user-message::before {
     content: "";
     position: absolute;
-    left: 18.3875rem;
+    left: 18.3375rem;
     border-width:   0.625rem 0.625rem 0.625rem 0.625rem;
     border-style: solid;
     border-color: transparent transparent  transparent rgba(41,170,227,255);

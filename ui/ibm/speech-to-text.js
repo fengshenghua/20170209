@@ -51,7 +51,11 @@ var STTModule = (function() {
       }
     } else {
       recording = false;
-      stream.stop();
+      try {
+        stream.stop();
+      } catch(e){
+        console.log(e);
+      }
     }
   }
 
@@ -67,7 +71,7 @@ var STTModule = (function() {
           token: token,                       // Authorization token to use this service, configured from /speech/stt-token.js file
           continuous: false,                  // False = automatically stop transcription the first time a pause is detected
           outputElement: '#user-input',       // CSS selector or DOM Element
-          inactivity_timeout: 5,              // Number of seconds to wait before closing input stream
+          inactivity_timeout: 30,              // Number of seconds to wait before closing input stream
           format: false,                      // Inhibits errors
           keepMicrophone: true,               // Avoids repeated permissions prompts in FireFox
           model: 'ja-JP_BroadbandModel'
@@ -83,15 +87,16 @@ var STTModule = (function() {
                 Conversation.sendMessage();             // Send the message to Watson Conversation
               }
             } else { // If there isn't any data to be handled by the conversation, display a message to the user letting them know
-              Api.setWatsonPayload({output: {text: ['Microphone input cancelled. Please press the button to speak to Watson again']}}); // If the user clicked the microphone button again to cancel current input
+              Api.setWatsonPayload({output: {text: ['マイク入力がキャンセルされました。もう一度Watsonと話すにはボタンを押してください']}}); // If the user clicked the microphone button again to cancel current input
             }
           })
           .catch(function(err) { // Catch any errors made during the promise
-            if (err !== 'Error: No speech detected for 5s.') { // This error will always occur when Speech-To-Text times out, so don't log it (but log everything else)
+            if (err !== 'Error: No speech detected for 30s.') { // This error will always occur when Speech-To-Text times out, so don't log it (but log everything else)
               console.log(err);
+            } else if (err === 'Error: No speech detected for 30s.') {
+              Api.setWatsonPayload({output: {text: ['Watson timed out after a few seconds of inactivity. Please press the button to speak to Watson again.']}});
             }
             mic.setAttribute('class', 'inactive-mic'); // Reset our microphone button to visually indicate we aren't listening to user anymore
-            Api.setWatsonPayload({output: {text: ['Watson timed out after a few seconds of inactivity. Please press the button to speak to Watson again.']}});
           });
       })
       .catch(function(error) { // Catch any other errors and log them

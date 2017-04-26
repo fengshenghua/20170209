@@ -58,7 +58,7 @@ var Conversation = (function() {
   // Hide chat box until there are messages,
   // set up messages to display when user or Watson sends message
   function chatSetup() {
-    document.getElementById(ids.chatScrollWrapper).style.display = 'none';
+    // document.getElementById(ids.chatScrollWrapper).style.display = 'none';
 
     var currentRequestPayloadSetter = Api.setUserPayload;
     Api.setUserPayload = function(payload) {
@@ -230,8 +230,10 @@ var Conversation = (function() {
           ? [authorTypes.user + '-message']
           : [authorTypes.watson + '-message', classes.preBar]),
         'html': (isUser ? '<img src=\'/images/head.svg\' />' + dataObj.text : dataObj.text + '<img src=\'/images/watson.svg\' />')
+        // 'html': (isUser ? '<img src=\'/images/head.svg\' />' + dataObj.text : dataObj.text)
       }]
     };
+
     return Common.buildDomElement(messageJson);
   }
 

@@ -15,16 +15,11 @@
  */
 
 #help {
-/*fengsh====================>修正(3/6)=============>start*/
-    padding: 0.5rem 27.6rem;
+    padding: 0.75rem 1.5625rem;
     background: white;
     position: absolute;
-	left: 1.3rem;
-    top: 2.7rem;
-	border-radius: 0.0rem;
-	border: 2px solid rgba(41,170,227,255);
-    color: rgba(204,204,204,255);
-/*fengsh====================>修正(3/6)=============>end*/
+    right: 1.25rem;
+    top: 1.25rem;
 }
 
 #sidebar {

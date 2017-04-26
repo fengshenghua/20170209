@@ -91,22 +91,23 @@
 #type-here-tooltip-dialog::before {
     content: "";
     position: absolute;
-    bottom: -1.375rem;
-    left: 8rem;
-    border-width: 1.3125rem 1.3125rem 0;
+    bottom: 1.375rem;
+    left: 18.8rem;
+    border-width: 1.3rem 1.0rem 0.3rem;
     border-style: solid;
-    border-color: #979797 transparent;
+    /*border-color: #979797 transparent;*/
+    border-color: transparent transparent  transparent #F8F8F8;
 }
 
-#type-here-tooltip-dialog::after {
+/*#type-here-tooltip-dialog::after {
     content: "";
     position: absolute;
     bottom: -1.3125rem;
-    left: 8rem;
-    border-width: 1.3125rem 1.3125rem 0;
+    left: 1rem;
+    border-width: 1.35rem 1.5rem 1.35rem 0;
     border-style: solid;
     border-color: #F8F8F8 transparent;
-}
+}*/
 
 #type-here-tooltip-dialog .tooltip-dialog-text {
     padding: 3.125rem 2.5rem 1.25rem 2.5rem;
