@@ -1,0 +1,228 @@
+#displayStatus {
+    position: absolute;
+    /*border: 1px solid black;*/
+    top:     5.625rem;
+    padding-top: 0.3125rem;
+    margin-left: 30rem;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+    background: rgba(0,0,0,0.3);
+    width: 50%;
+    /*color: white;*/
+}
+
+#favorite {
+    position: absolute;
+    /*border: 1px solid black;*/
+	/*fengsh====================>修正(3/6)=============>start*/
+    top:     24.5rem;
+    padding-top: 0.3125rem;
+    margin-left: 28.9rem;
+    /*border-top-left-radius: 0.625rem;*/
+    /*border-top-right-radius: 0.625rem;*/
+    background: rgba(255,255,255,255);
+    width: 49.6%;
+	height: 280px;
+	/*fengsh====================>修正(3/6)=============>end*/
+    color: rgba(41,170,227,255);
+    border: 2.15px solid rgba(204,204,204,255);
+}
+
+.box {
+    margin-left : 20px;
+    margin-right : 20px;
+    margin-top: 0.5em;
+	/*fengsh====================>修正(3/6)=============>start*/
+    border: 1px solid rgba(204,204,204,255);
+	/*fengsh====================>修正(3/6)=============>end*/
+}
+
+.field {
+    margin-left : 30px;
+	/*fengsh====================>修正(3/6)=============>start*/
+	margin-top:10px;
+	/*fengsh====================>修正(3/6)=============>end*/
+    display: table;
+    margin-bottom: 0.5em;
+}
+
+.field2 {
+    margin-left : 25px;
+    display: table;
+    margin-bottom: 0.5em;
+}
+
+.label,.label1,.label2,.value{
+    display: table-cell;
+}
+
+.label {
+    min-width: 100px;
+}
+
+.label3 {
+    margin-left : 10px;
+    width: 112px;
+}
+
+.value, .value-favorite {
+    vertical-align: bottom;
+    width: 60px;
+}
+
+.value {
+    text-align: left;
+    color: yellow;
+}
+
+.value-favorite {
+    text-align: right;
+}
+
+.input-value {
+    display: inline-block;
+    width: 15%;
+    margin-top: 5px;
+}
+
+/*fengsh====================>修正(3/6)=============>start*/
+.field3 {
+    margin-left : 10px;
+    display: table;
+}
+
+.field4 {
+    margin-left : 8px;
+    margin-top: 10px;
+    display: table;
+}
+
+.field5 {
+    margin-left : 25px;
+    margin-top : 5px;
+    display: table;
+    margin-bottom: 0.5em;
+}
+/**
+ * Checkbox Four
+ */
+.checkboxFour {
+    position: absolute;
+    left: 3.2rem;
+	width: 22px;
+	height: 22px;
+	background: white;
+	margin: 10px 45px; 
+
+	border-radius: 0%;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+/**
+ * Create the checkbox button
+ */
+.checkboxFour label {
+	display: block;
+	width: 12px;
+	height: 12px;
+	border-radius: 0px;
+
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #ddd;
+
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+/**
+ * Create the checked state
+ */
+.checkboxFour input[type=checkbox]:checked + label {
+	background: rgba(41,170,227,255);
+}
+#hobby-update.hobby-on {
+  background-image: url("../images/update.svg");
+}
+#hobby-update.hobby-off {
+  background-image: url("../images/updateoff.svg");
+}
+
+#hobby-update {
+    position: absolute;
+    z-index: 10;
+    left: 57rem;
+    top: 25.0rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 1.7rem;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 70%;
+}
+#search.search-on {
+  background-image: url("../images/search.svg");
+}
+
+#talk {
+    position: absolute;
+    z-index: 10;
+    left: 0.25rem;
+    top: 4.88rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 1.7rem;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+#talk.talk-on {
+  background-image: url("../images/talkon.svg");
+}
+#talk.talk-off {
+  background-image: url("../images/talkoff.svg");
+}  
+
+#search {
+    position: absolute;
+    z-index: 10;
+    left: 60rem;
+    top: 2.2rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 1.7rem;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50%;
+}
+.selectStatus {
+	text-align:center;
+	margin-left:10px;
+	width:130px;
+	height:25px;
+	vertical-align:middle;
+	color:rgba(153,153,153,255);
+}
+.selectStatus2 {
+	text-align:center;
+	margin-left:25px;
+	width:130px;
+	height:25px;
+	vertical-align:middle;
+	color:rgba(153,153,153,255);
+}
+/*fengsh====================>修正(3/6)=============>end*/
