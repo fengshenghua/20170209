@@ -19,6 +19,17 @@
 const secure = require('express-secure-only');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const basicAuth = require('basic-auth');
+
+var auth = function(req, res, next){
+    var user = basicAuth(req);
+    if(user && user.name == "admin" && user.pass == "adminp@ss")
+        return next();
+    else{
+        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+        return res.sendStatus(401);
+    }
+}
 
 module.exports = function (app) {
   app.use(secure());
@@ -37,4 +48,8 @@ module.exports = function (app) {
     })
   });
   app.use('/api/', limiter);
+
+  app.use(function(req, res, next) {
+      return auth(req, res, next);
+  });
 };
