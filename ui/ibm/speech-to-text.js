@@ -62,7 +62,9 @@ var STTModule = (function() {
   function speechToText() {
     mic.setAttribute('class', 'active-mic');  // Set CSS class of mic to indicate that we're currently listening to user input
     recording = true;                         // We'll be recording very shortly
-    fetch('/api/speech-to-text/token')        // Fetch authorization token for Watson Speech-To-Text
+    fetch('/api/speech-to-text/token', {
+        credentials: "same-origin"
+      })        // Fetch authorization token for Watson Speech-To-Text
       .then(function(response) {
         return response.text();
       })

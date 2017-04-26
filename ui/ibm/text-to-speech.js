@@ -64,7 +64,9 @@ var TTSModule = (function() {
 
   // Stops the audio for an older message and plays audio for current message
   function playCurrentAudio(payload) {
-    fetch('/api/text-to-speech/token') // Retrieve TTS token
+    fetch('/api/text-to-speech/token', {
+        credentials: "same-origin"
+      }) // Retrieve TTS token
       .then(function(response) {
         return response.text();
       }).then(function(token) {
